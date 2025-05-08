@@ -1,6 +1,6 @@
 {
-    "name": "ease",
-    "description": "A Ghost theme",
+    "name": "ease-ros2xyz",
+    "description": "A Ghost theme customized for ros2.xyz",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -44,7 +44,11 @@
         "custom": {
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "options": [
+                    "Logo on the left",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
                 "default": "Logo on the left"
             },
             "title_font": {
@@ -91,5 +95,6 @@
         "postcss": "8.5.3",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.2"
-    }
+    },
+    "packageManager": "yarn@1.22.21+sha512.ca75da26c00327d26267ce33536e5790f18ebd53266796fbb664d2a4a5116308042dd8ee7003b276a20eace7d3c5561c3577bdd71bcb67071187af124779620a"
 }

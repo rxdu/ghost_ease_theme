@@ -99,11 +99,13 @@
             <div class="gh-copyright">
                 {{@site.title}} © {{date format="YYYY"}}
             </div>
-            {{#if @site.secondary_navigation}}
-                <nav class="gh-foot-menu">
-                    {{navigation type="secondary"}}
-                </nav>
-            {{/if}}
+            <nav class="gh-foot-menu">
+                <ul class="nav">
+                    <li><a href="{{@site.url}}/terms/">Terms</a></li>
+                    <li><a href="{{@site.url}}/privacy/">Privacy</a></li>
+                    <li><a href="{{@site.url}}/contact/">Contact</a></li>
+                </ul>
+            </nav>
             <div class="gh-powered-by">
                 <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
             </div>

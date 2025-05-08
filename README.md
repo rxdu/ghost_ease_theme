@@ -1,4 +1,4 @@
-# Ease
+# Ease for ROS2.XYZ
 
 A versatile [Ghost](https://github.com/TryGhost/Ghost) theme suitable for documentation. Publish your posts or business information with ease.
 
@@ -27,6 +27,51 @@ The `zip` Gulp task packages the theme files into `dist/ease.zip`, which you can
 
 ```bash
 yarn zip
+```
+
+# Ghost Setup
+
+You need to install ghost to preview the theme locally.
+
+First-time setup:
+
+```bash
+# install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 22
+node -v 
+
+# install npm
+sudo apt install npm
+
+# install ghost
+npm install ghost-cli@latest -g
+```
+
+Create a new ghost instance:
+
+```bash
+cd <your-ghost-ws>
+ghost install local
+```
+
+Once the install is finished you’ll be able to access your new site on `http://localhost:2368` and `http://localhost:2368/ghost` to access Ghost Admin.
+
+| Command         | Description                                 |
+| --------------- | ------------------------------------------- |
+| `ghost start`   | Start Ghost as a background service         |
+| `ghost stop`    | Stop the Ghost instance                     |
+| `ghost restart` | Restart it (e.g. after theme change)        |
+| `ghost log`     | View Ghost server logs                      |
+| `ghost run`     | Run Ghost in foreground (for dev debugging) |
+| `ghost status`  | Show current Ghost status (running or not)  |
+
+You need to link the theme to the ghost instance:
+
+```bash
+ln -sf $(pwd) <your-ghost-ws>/content/themes/ease
+ghost restart
 ```
 
 # Contribution
