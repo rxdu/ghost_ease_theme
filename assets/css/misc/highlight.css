@@ -1,36 +1,174 @@
-/* Base styling for code blocks */
+/* VSCode-inspired code styling */
 pre {
     background-color: #1e1e1e;
     border-radius: 4px;
-    padding: 1em;
     margin: 1.5em 0;
     overflow: auto;
     border: 1px solid #333;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
 }
 
-code {
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-    font-size: 0.9em;
-    color: #d4d4d4;
-}
-
-pre code {
+/* Line numbers column */
+.line-numbers {
     display: block;
-    padding: 0;
-    white-space: pre;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
+    padding: 12px 8px;
+    text-align: right;
+    background-color: #252526;
+    border-right: 1px solid #3f3f3f;
+    min-width: 32px;
+    font-size: 11px;
+    line-height: 1.3;
+    color: #858585;
+    user-select: none;
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
 }
 
-/* Adding specific styling for inline code that's not in a pre block */
+/* Code content */
+.code-content {
+    padding: 12px;
+    flex-grow: 1;
+    overflow: visible;
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.3;
+    color: #d4d4d4;
+    tab-size: 4;
+}
+
+/* Fix for plain code elements */
+pre code {
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+    font-size: 13px;
+    color: #d4d4d4;
+    padding: 12px;
+    display: block;
+}
+
+/* Ensure code highlights align with line numbers */
+.line-numbers .line-number {
+    display: block;
+    height: 19px; /* Match VSCode line height */
+}
+
+.code-content .line {
+    min-height: 19px; /* Match VSCode line height */
+    display: block; 
+    white-space: pre;
+}
+
+/* Handle code without line numbers */
+pre:not(.with-line-numbers) code {
+    display: block;
+    white-space: pre;
+    overflow: auto;
+}
+
+/* Inline code (not in pre blocks) */
 :not(pre) > code {
     color: #d7ba7d;
     background-color: #2d2d2d;
     padding: 0.2em 0.4em;
     border-radius: 3px;
-    font-size: 0.85em;
+    font-size: 0.9em;
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Courier New', monospace;
+}
+
+/* VSCode syntax highlighting colors */
+.hljs-keyword,
+.hljs-selector-tag {
+    color: #569CD6;
+}
+
+.hljs-built_in {
+    color: #4EC9B0;
+}
+
+.hljs-type {
+    color: #4EC9B0;
+}
+
+.hljs-literal,
+.hljs-number {
+    color: #B5CEA8;
+}
+
+.hljs-regexp,
+.hljs-string {
+    color: #CE9178;
+}
+
+.hljs-subst {
+    color: #d4d4d4;
+}
+
+.hljs-symbol,
+.hljs-class,
+.hljs-function {
+    color: #DCDCAA;
+}
+
+.hljs-title {
+    color: #DCDCAA;
+}
+
+.hljs-params {
+    color: #9CDCFE;
+}
+
+.hljs-comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+.hljs-doctag {
+    color: #608B4E;
+}
+
+.hljs-meta,
+.hljs-meta-keyword {
+    color: #9B9B9B;
+}
+
+.hljs-meta-string {
+    color: #CE9178;
+}
+
+.hljs-attr {
+    color: #9CDCFE;
+}
+
+.hljs-attribute {
+    color: #CE9178;
+}
+
+.hljs-name {
+    color: #569CD6;
+}
+
+.hljs-section {
+    color: gold;
+}
+
+.hljs-tag {
+    color: #569CD6;
+}
+
+.hljs-variable {
+    color: #9CDCFE;
+}
+
+.hljs-template-variable {
+    color: #9CDCFE;
+}
+
+.hljs-template-tag {
+    color: #569CD6;
+}
+
+/* Selection color like VSCode */
+::selection {
+    background-color: #264f78;
 }
 
 /* Individual language token styles will be loaded from highlight.js */ 

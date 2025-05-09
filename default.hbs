@@ -135,11 +135,53 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/markdown.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
-<!-- Initialize highlight.js -->
+<!-- Initialize highlight.js with manual line numbers -->
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', () => {
+        // Process all code blocks
         document.querySelectorAll('pre code').forEach((block) => {
+            // Apply syntax highlighting
             hljs.highlightElement(block);
+            
+            // Get content and convert to lines
+            const content = block.innerHTML;
+            const lines = content.split('\n');
+            
+            // Create line numbers element
+            const lineNumbers = document.createElement('div');
+            lineNumbers.className = 'line-numbers';
+            
+            // Create code content element
+            const codeContent = document.createElement('div');
+            codeContent.className = 'code-content';
+            
+            // Generate line numbers and code content
+            let lineNumbersHTML = '';
+            let codeContentHTML = '';
+            
+            lines.forEach((line, index) => {
+                // Skip empty last line
+                if (index === lines.length - 1 && !line.trim()) {
+                    return;
+                }
+                
+                // Add line number
+                lineNumbersHTML += `<span class="line-number">${index + 1}</span>`;
+                
+                // Add code line
+                codeContentHTML += `<span class="line">${line}</span>`;
+            });
+            
+            // Set content
+            lineNumbers.innerHTML = lineNumbersHTML;
+            codeContent.innerHTML = codeContentHTML;
+            
+            // Replace original code with new structure
+            const pre = block.parentNode;
+            pre.innerHTML = '';
+            pre.classList.add('with-line-numbers');
+            pre.appendChild(lineNumbers);
+            pre.appendChild(codeContent);
         });
     });
 </script>
