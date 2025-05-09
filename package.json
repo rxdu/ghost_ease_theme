@@ -91,10 +91,11 @@
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
+        "highlight.js": "11.9.0",
         "ordered-read-streams": "2.0.0",
         "postcss": "8.5.3",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.2"
+        "pump": "3.0.0"
     },
     "packageManager": "yarn@1.22.21+sha512.ca75da26c00327d26267ce33536e5790f18ebd53266796fbb664d2a4a5116308042dd8ee7003b276a20eace7d3c5561c3577bdd71bcb67071187af124779620a"
 }

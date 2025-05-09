@@ -1,0 +1,36 @@
+/* Base styling for code blocks */
+pre {
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1.5em 0;
+    overflow: auto;
+    border: 1px solid #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    color: #d4d4d4;
+}
+
+pre code {
+    display: block;
+    padding: 0;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+}
+
+/* Adding specific styling for inline code that's not in a pre block */
+:not(pre) > code {
+    color: #d7ba7d;
+    background-color: #2d2d2d;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+/* Individual language token styles will be loaded from highlight.js */ 
