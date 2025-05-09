@@ -1,0 +1,126 @@
+/* KaTeX styling enhancements */
+
+/* Block equations (display mode) - add some spacing and centering */
+.katex-display {
+    margin: 1.5em 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em 0;
+    position: relative; /* For proper equation tag positioning */
+    text-align: center;
+}
+
+/* Ensure display equations don't overflow on mobile */
+.katex-display > .katex {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+/* Add right padding for equation numbers */
+.katex-html {
+    padding-right: 3em;
+}
+
+/* Scrollbar styling for overflow equations */
+.katex-display::-webkit-scrollbar {
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.katex-display::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.dark-mode .katex-display::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .katex-display::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Inline math - better vertical alignment */
+.katex {
+    font-size: 1.1em;
+}
+
+/* Add a slight highlight for inline math to make it stand out slightly from text */
+:not(.katex-display) > .katex {
+    margin: 0 0.1em;
+}
+
+/* Dark mode adjustments */
+.dark-mode .katex {
+    color: #e0e0e0;
+}
+
+/* For better focus on block equations in dark mode */
+.dark-mode .katex-display {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 5px;
+}
+
+/* Equation numbering styles */
+.katex .tag {
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-text-color, #777);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.9em;
+    padding: 0.1em 0.4em;
+    line-height: 1;
+    height: auto;
+    background-color: transparent;
+    border: none;
+}
+
+/* Make sure tags don't get hidden when scrolling */
+.katex-display .katex-html .tag {
+    position: absolute;
+    right: 0;
+    float: right;
+    clear: both;
+}
+
+/* Create responsive numbered equations */
+@media (max-width: 600px) {
+    /* On small screens, add more right padding for equation numbers */
+    .katex-display .katex-html {
+        padding-right: 2.5em;
+    }
+    
+    /* Make equation numbers a bit smaller on mobile */
+    .katex .tag {
+        font-size: 0.8em;
+        right: 0.3em;
+    }
+}
+
+/* References to equation numbers in text */
+.eq-ref {
+    font-family: var(--font-mono, monospace);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-size: 0.9em;
+    color: var(--primary-color, #6c5ce7);
+}
+
+.dark-mode .eq-ref {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* When user copies equations with copy-tex extension */
+.katex-copy-text {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    white-space: pre;
+    user-select: none;
+} 
