@@ -20,6 +20,22 @@
     max-width: 100%; 
 }
 
+/* Justify paragraph text for uniform appearance */
+.gh-content p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* But keep headings left-aligned */
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4,
+.gh-content h5,
+.gh-content h6 {
+    text-align: left;
+}
+
 /* Ensure code blocks don't break the layout */
 .gh-content pre {
     max-width: 100%;
