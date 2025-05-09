@@ -1,0 +1,27 @@
+/* Override default content width to make posts wider */
+:root {
+    /* Increase content width from 720px to 960px */
+    --content-width: 960px;
+}
+
+/* Make gh-canvas a bit more responsive on tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    :root {
+        --content-width: 85vw;
+    }
+}
+
+/* Adjust the article content to feel less constrained */
+.gh-article-title {
+    max-width: 100%;
+}
+
+.gh-content {
+    max-width: 100%; 
+}
+
+/* Ensure code blocks don't break the layout */
+.gh-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
