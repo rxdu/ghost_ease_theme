@@ -140,6 +140,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         // Process all code blocks
         document.querySelectorAll('pre code').forEach((block) => {
+            // Skip mermaid blocks
+            if (block.classList.contains('language-mermaid')) {
+                return;
+            }
+            
             // Apply syntax highlighting
             hljs.highlightElement(block);
             
@@ -185,6 +190,8 @@
         });
     });
 </script>
+<!-- Mermaid.js for diagram rendering -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script src="{{asset "built/main.min.js"}}"></script>
 
 {{ghost_foot}}

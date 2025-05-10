@@ -4,6 +4,16 @@ A versatile [Ghost](https://github.com/TryGhost/Ghost) theme suitable for docume
 
 **Demo: https://ease.ghost.io**
 
+# Features
+
+- Clean, responsive design
+- Optimized for publishing content
+- Syntax highlighting with highlight.js
+- Diagram support with Mermaid.js
+- Customizable navigation layout
+
+For more information on using Mermaid diagrams, see the [Mermaid Diagrams Documentation](docs/mermaid-diagrams.md).
+
 # Instructions
 
 1. [Download this theme](https://github.com/TryGhost/Ease/archive/main.zip)
@@ -56,7 +66,7 @@ cd <your-ghost-ws>
 ghost install local
 ```
 
-Once the install is finished you’ll be able to access your new site on `http://localhost:2368` and `http://localhost:2368/ghost` to access Ghost Admin.
+Once the install is finished you'll be able to access your new site on `http://localhost:2368` and `http://localhost:2368/ghost` to access Ghost Admin.
 
 | Command         | Description                                 |
 | --------------- | ------------------------------------------- |
