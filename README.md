@@ -9,7 +9,6 @@ A versatile [Ghost](https://github.com/TryGhost/Ghost) theme suitable for docume
 The following additional features are added to the original [Ease](https://github.com/TryGhost/Ease) theme:
 
 - Table of contents
-- Linkable headings
 - Markdown callout boxes
 - Mermaid diagrams (mermaid.js)
 - Latex equations (katex.js)
