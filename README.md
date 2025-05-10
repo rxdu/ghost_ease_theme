@@ -2,17 +2,22 @@
 
 A versatile [Ghost](https://github.com/TryGhost/Ghost) theme suitable for documentation. Publish your posts or business information with ease.
 
-**Demo: https://ease.ghost.io**
+**Demo: https://ros2.xyz**
 
 # Features
 
-- Clean, responsive design
-- Optimized for publishing content
-- Syntax highlighting with highlight.js
-- Diagram support with Mermaid.js
-- Customizable navigation layout
+The following additional features are added to the original [Ease](https://github.com/TryGhost/Ease) theme:
 
-For more information on using Mermaid diagrams, see the [Mermaid Diagrams Documentation](docs/mermaid-diagrams.md).
+- Table of contents
+- Linkable headings
+- Markdown callout boxes
+- Mermaid diagrams (mermaid.js)
+- Latex equations (katex.js)
+- Code block with line numbers and syntax highlighting (highlight.js)
+- Side-by-side images with captions
+- Customized table styles and other adjustments for technical contents
+
+You can refer to the [SAMPLE.md](SAMPLE.md) file for the usage of these features.
 
 # Instructions
 
