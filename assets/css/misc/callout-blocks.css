@@ -1,0 +1,101 @@
+/* Callout blocks for info, warning, tip, etc. */
+.kg-callout-card {
+    margin: 1.5em 0;
+    padding: 1.5rem;
+    border-radius: 3px;
+    border-left: 4px solid;
+}
+
+.kg-callout-card-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.8em;
+    flex-shrink: 0;
+}
+
+.kg-callout-card-content {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Info callout */
+.kg-callout-card.kg-callout-card-info {
+    background-color: #e8f4fd;
+    border-color: #2196f3;
+    color: #0c5c9b;
+}
+
+.kg-callout-card.kg-callout-card-info .kg-callout-card-icon {
+    color: #2196f3;
+}
+
+/* Warning callout */
+.kg-callout-card.kg-callout-card-warning {
+    background-color: #fff8e6;
+    border-color: #ff9800;
+    color: #995c00;
+}
+
+.kg-callout-card.kg-callout-card-warning .kg-callout-card-icon {
+    color: #ff9800;
+}
+
+/* Tip/Success callout */
+.kg-callout-card.kg-callout-card-success {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+    color: #2b682e;
+}
+
+.kg-callout-card.kg-callout-card-success .kg-callout-card-icon {
+    color: #4caf50;
+}
+
+/* Note callout */
+.kg-callout-card.kg-callout-card-note {
+    background-color: #f3e5f5;
+    border-color: #9c27b0;
+    color: #601a70;
+}
+
+.kg-callout-card.kg-callout-card-note .kg-callout-card-icon {
+    color: #9c27b0;
+}
+
+/* Error/Danger callout */
+.kg-callout-card.kg-callout-card-error {
+    background-color: #ffebee;
+    border-color: #f44336;
+    color: #be160a;
+}
+
+.kg-callout-card.kg-callout-card-error .kg-callout-card-icon {
+    color: #f44336;
+}
+
+/* Dark mode adjustments */
+.kg-dark-mode .kg-callout-card.kg-callout-card-info {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #64b5f6;
+}
+
+.kg-dark-mode .kg-callout-card.kg-callout-card-warning {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #ffb74d;
+}
+
+.kg-dark-mode .kg-callout-card.kg-callout-card-success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #81c784;
+}
+
+.kg-dark-mode .kg-callout-card.kg-callout-card-note {
+    background-color: rgba(156, 39, 176, 0.1);
+    color: #ba68c8;
+}
+
+.kg-dark-mode .kg-callout-card.kg-callout-card-error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #e57373;
+} 
