@@ -94,34 +94,24 @@
         
         // Only create floating TOC for wider screens
         if (window.innerWidth >= 1200) {
-            // Create floating TOC for wider screens
+            // Create floating TOC for wider screens with fixed style
             const floatingTocContainer = document.createElement('div');
             floatingTocContainer.className = 'gh-toc-floating';
             floatingTocContainer.id = 'gh-floating-toc'; // Add a unique ID
+            
+            // Set fixed position styling directly in the element style
+            floatingTocContainer.style.cssText = `
+                position: fixed !important;
+                top: 160px !important;
+                box-shadow: none !important;
+                right: ${window.innerWidth >= 1600 ? 'calc((100vw - 1320px) / 2 - 150px)' : '60px'};
+            `;
             
             // Add TOC list without title
             floatingTocContainer.appendChild(createTocList().cloneNode(true));
             
             // Add the floating TOC to the document
             document.querySelector('.site-content').appendChild(floatingTocContainer);
-            
-            // Ensure correct positioning
-            setTimeout(function() {
-                const tocEl = document.getElementById('gh-floating-toc');
-                if (tocEl) {
-                    // Explicitly set position with inline style to override any computed styles
-                    tocEl.style.position = 'fixed';
-                    tocEl.style.top = '220px';
-                    tocEl.style.boxShadow = 'none';
-                    
-                    // Calculate right position based on screen width
-                    if (window.innerWidth >= 1600) {
-                        tocEl.style.right = 'calc((100vw - 1320px) / 2 - 150px)';
-                    } else {
-                        tocEl.style.right = '60px';
-                    }
-                }
-            }, 200);
         }
         
         // Make heading links clickable and add scroll behavior
@@ -158,21 +148,22 @@
                 const floatingTocContainer = document.createElement('div');
                 floatingTocContainer.className = 'gh-toc-floating';
                 floatingTocContainer.id = 'gh-floating-toc';
+                
+                // Set fixed position styling directly in the element style
+                floatingTocContainer.style.cssText = `
+                    position: fixed !important;
+                    top: 160px !important;
+                    box-shadow: none !important;
+                    right: ${window.innerWidth >= 1600 ? 'calc((100vw - 1320px) / 2 - 150px)' : '60px'};
+                `;
+                
                 floatingTocContainer.appendChild(createTocList().cloneNode(true));
                 document.querySelector('.site-content').appendChild(floatingTocContainer);
-            }
-            
-            // Adjust position for existing floating TOC
-            const tocEl = document.getElementById('gh-floating-toc');
-            if (tocEl) {
-                tocEl.style.position = 'fixed';
-                tocEl.style.top = '220px';
-                tocEl.style.boxShadow = 'none';
-                
-                if (window.innerWidth >= 1600) {
-                    tocEl.style.right = 'calc((100vw - 1320px) / 2 - 150px)';
-                } else {
-                    tocEl.style.right = '60px';
+            } else {
+                // Update position for existing floating TOC
+                const tocEl = document.getElementById('gh-floating-toc');
+                if (tocEl) {
+                    tocEl.style.right = window.innerWidth >= 1600 ? 'calc((100vw - 1320px) / 2 - 150px)' : '60px';
                 }
             }
         });

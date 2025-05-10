@@ -79,7 +79,7 @@
 /* Floating TOC styles */
 .gh-toc-floating {
     position: fixed !important;
-    top: 220px !important; /* Even lower position */
+    top: 160px !important; /* Increased by 20px from 120px */
     max-height: 70vh;
     overflow-y: auto;
     padding: 0.8rem;
